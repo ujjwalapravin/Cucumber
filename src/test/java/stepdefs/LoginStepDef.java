@@ -10,7 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 
-public class LoginStepDef {
+public class LoginStepDef{
 	
 	WebDriver driver = Hooks.driver;
 	
@@ -23,13 +23,11 @@ public class LoginStepDef {
 	}
 
 	@Given("I have clicked on Login Link")
-	public void i_have_clicked_on_Login_Link() throws InterruptedException {
+	public void i_have_clicked_on_Login_Link() {
 	    // Write code here that turns the phrase above into concrete actions
 	   
 		WebElement loginLink = driver.findElement(By.linkText("Log in"));
 		loginLink.click();
-		
-	
 	}
 
 	@When("I enter username")
@@ -69,7 +67,8 @@ public class LoginStepDef {
 		
 		Assert.assertEquals(ActError, ExpError);;
 	}
-	@When("I enter username as {string}")
+
+@When("I enter username as {string}")
 	public void i_enter_username_as(String UserNameVal) {
 	    // Write code here that turns the phrase above into concrete actions
 		WebElement userName = driver.findElement(By.name("user_login"));
@@ -96,9 +95,4 @@ public class LoginStepDef {
 
 
 }
-
-
-
-
-
 

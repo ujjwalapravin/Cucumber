@@ -14,10 +14,11 @@ public class Hooks {
 	public static WebDriver driver;
 	
 	@Before
-	public void SetUp() {
+	public void SetUp() throws InterruptedException {
 		
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
+		Thread.sleep(3000);
 driver.manage().timeouts().implicitlyWait(3000,TimeUnit.MILLISECONDS);
 driver.manage().window().maximize();
 	}
@@ -30,4 +31,6 @@ driver.manage().window().maximize();
 	}
 
 }
+
+
 
